@@ -1,0 +1,33 @@
+<h1>New Expense entry!</h1>
+
+<%= form_for :expense, url: expenses_path do |f| %>
+  <p>
+    <%= f.label :category %><br>
+	<%= f.collection_select :category, Expense::CATEGORIES, :to_s, :to_s, 
+       :include_blank => false
+	   %>
+  </p>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+  
+  
+    <p>
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+	<%# amount=amount+2 %>
+  </p>
+  
+    <p>
+    <%= f.label :currency %><br>
+    	<%= f.collection_select :currency, Expense::CURRENCY, :to_s, :to_s, 
+       :include_blank => false
+	   %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

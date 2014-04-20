@@ -1,0 +1,16 @@
+<h1>Expenses listing</h1>
+<table>
+<tr>
+<th>Category</th>
+<th>Amount</th>
+</tr>
+<% expenses=Expense.all %>
+<% expenses.each do |expense| %>
+<tr>
+<td><%=expense.category %></td>
+<td><%=expense.amount %></td>
+</tr>
+<% end %>
+<% if expenses.size == 0 %>
+	<em>No Expenses Found</em>
+</table>

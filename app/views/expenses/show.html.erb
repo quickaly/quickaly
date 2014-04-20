@@ -1,0 +1,5 @@
+<p><%= "Expense number:" + @expense.id.to_s %></p>
+<p><%= "Expense description:" + @expense.description.to_s %></p>
+<p><%= "Expense amount:" + @expense.amount.number_to_currency(precision:2) %></p>
+<p><%= "Expense currency:" + @expense.currency.to_s %></p>
+<p><%= "Expense category:" + @expense.category %></p>
